@@ -1,1 +1,13 @@
+@startuml
+actor "Usuário" as User
+actor "Administrador" as Admin
 
+rectangle "Ecopla" {
+    User --> (Vender Plástico Reciclável)
+    Admin --> (Aprovar Venda)
+    
+    User --> (Comprar Filamentos)
+    User --> (Realizar Pagamento)
+    User --> (Acompanhar Pedido)
+}
+@enduml
