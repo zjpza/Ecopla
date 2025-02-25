@@ -1,1 +1,12 @@
+@startuml
+actor "Usuário" as User
+actor "Ecopla" as System
 
+rectangle "Ecopla" {
+    User --> (Upload de Arquivo 3D)
+    User --> (Configurar Impressão)
+    User --> (Confirmar Pedido)
+    
+    System --> (Produção e Envio)
+}
+@enduml
