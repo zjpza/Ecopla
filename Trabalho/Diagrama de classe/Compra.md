@@ -1,7 +1,7 @@
-![image](https://github.com/user-attachments/assets/4d89473d-f90c-4804-a101-9099623b0b9d)
+![image](https://github.com/user-attachments/assets/70557b34-b833-4190-a016-24a1019c3ab0)
 
 # CÓDIGO 
-@startuml
+    @startuml
     class Cliente {
     
     }
