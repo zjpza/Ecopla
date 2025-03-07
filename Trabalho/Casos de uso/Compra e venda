@@ -9,5 +9,5 @@ rectangle "Ecopla" {
     User --> (Comprar Filamentos)
     User --> (Realizar Pagamento)
     User --> (Acompanhar Pedido)
-}
+
 @enduml
