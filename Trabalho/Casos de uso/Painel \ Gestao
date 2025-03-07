@@ -1,4 +1,7 @@
 @startuml
+
+left to right direction
+
 actor "Usuário" as User
 actor "Administrador" as Admin
 
@@ -9,5 +12,4 @@ rectangle "Ecopla" {
     Admin --> (Gestão de Usuários)
     Admin --> (Monitoramento do Sistema)
     Admin --> (Incluir Produtos no Sitema)
-}
 @enduml
