@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/c82075d2-aa9e-4e32-94b9-23746edd49d2)
-# CÓDIGO
-  
+
+# CÓDIGO  
   @startuml
   left to right direction
 
