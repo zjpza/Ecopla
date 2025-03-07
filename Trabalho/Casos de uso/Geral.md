@@ -1,14 +1,14 @@
 ![image](https://github.com/user-attachments/assets/c82075d2-aa9e-4e32-94b9-23746edd49d2)
 
 # CÓDIGO  
-  @startuml
-  left to right direction
+    @startuml
+    left to right direction
 
-  actor "Usuário" as User
-  actor "Administrador" as Admin
-  actor "Ecopla" as System
+    actor "Usuário" as User
+    actor "Administrador" as Admin
+    actor "Ecopla" as System
 
-  rectangle "Ecopla" {
+    rectangle "Ecopla" {
       User --> (Vender Plástico Reciclável)
       User --> (Comprar Filamentos)
       User --> (Realizar Pagamento)
