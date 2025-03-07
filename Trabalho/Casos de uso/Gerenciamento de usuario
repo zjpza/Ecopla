@@ -1,4 +1,6 @@
 @startuml
+left to right direction
+
 actor "Usuário" as User
 actor "Administrador" as Admin
 
