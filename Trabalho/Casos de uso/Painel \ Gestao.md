@@ -8,7 +8,7 @@
     actor "Administrador" as Admin
 
     rectangle "Ecopla" {
-           User --> (Acompanhar Pedido)
+        User --> (Acompanhar Pedido)
         User --> (Consultar Histórico)
     
         Admin --> (Gestão de Usuários)
