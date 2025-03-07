@@ -2,35 +2,35 @@
 
 # CÓDIGO
     @startuml
-   class Usuario {
+    class Usuario {
    
-   }
+    }
 
-   class Cliente {
+    class Cliente {
    
-   }
+    }
 
-   class Pedido {
+    class Pedido {
 
-   }
+    }
 
-   class ItemPedido {
+    class ItemPedido {
    
-   }
+    }
 
-   class Pagamento {
+    class Pagamento {
   
-   }
+    }
 
-   class Impressao3D {
+    class Impressao3D {
        
-   }   
+    }   
 
-   Usuario <|-- Cliente
-   Usuario "1" -- "0..*" Pedido
-   Pedido "1" -- "1..*" ItemPedido
-   Pedido "1" -- "1" Pagamento
-   Usuario "1" -- "0..*" Impressao3D
-   @enduml
+    Usuario <|-- Cliente
+    Usuario "1" -- "0..*" Pedido
+    Pedido "1" -- "1..*" ItemPedido
+    Pedido "1" -- "1" Pagamento
+    Usuario "1" -- "0..*" Impressao3D
+    @enduml
 
 
