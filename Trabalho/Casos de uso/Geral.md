@@ -19,7 +19,6 @@
       User --> (Gerenciar Perfil)
       User --> (Upload de Arquivo 3D)
       User --> (Configurar Impressão)
-      User --> (Acompanhar Pedido)
       User --> (Consultar Histórico)
 
       Admin --> (Gerenciar Usuários)
