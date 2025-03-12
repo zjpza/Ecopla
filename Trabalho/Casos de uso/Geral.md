@@ -27,7 +27,6 @@
       Admin --> (Aprovar Venda)
       Admin --> (Gestão de Usuários)
       Admin --> (Monitoramento do Sistema)
-      Admin --> (Incluir Produtos no Sitema)
 
       System --> (Produção e Envio)
 
