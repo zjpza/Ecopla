@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4c07016f-6c80-4b8e-a621-e269d002b05f)![image](https://github.com/user-attachments/assets/de317a18-196f-404f-a6b5-16ddfd2f9442)
+![image](https://github.com/user-attachments/assets/4c07016f-6c80-4b8e-a621-e269d002b05f)
 # CÓDIGO
     @startuml
     actor usuario as user
