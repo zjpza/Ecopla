@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/4f3b0a7d-4d85-430c-97d6-1ca42926137b)
+![image](https://github.com/user-attachments/assets/df9e7c38-02b2-4be5-85e8-0a32422dd31c)
+
 
 # CÓDIGO
     @startuml
