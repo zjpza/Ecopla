@@ -1,4 +1,4 @@
-@startuml ComprarFilamentos
+@startuml 
 
 actor usuario as user
 boundary telaPedido as tela
