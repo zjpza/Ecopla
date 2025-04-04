@@ -1,11 +1,11 @@
-![image](https://github.com/user-attachments/assets/ea438156-312d-4e5a-9f55-f0410d164efb)
+![image](https://github.com/user-attachments/assets/065d1953-6902-4985-8f61-c88af9d15ed5)
 
 # CODIGO
 
-    
-        @startuml
+      @startuml
     actor "Usuário" as user
     participant ":TelaPedido" as tela
+    participant ":Controller" as Controller 
     participant ":Administrador" as adm
     participant ":ServicoImpressao" as servico
     database ":Banco de Dados" as BD
@@ -13,55 +13,55 @@
     user -> tela : iniciarPedidoCompraFilamento()
     activate tela
     
-    tela -> tela : mostrarMensagem("Pedido iniciado")
+    Controller --> tela : mostrarMensagem("Pedido iniciado")
     
-    tela -> user : solicitarModelo3D()
-    user --> tela : mtOutModelo
+    Controller -> tela : solicitarModelo3D()
+    tela --> Controller : mtOutModelo
     
-    tela -> adm : analisarModelo(mtOutModelo)
+    Controller -> adm : analisarModelo(mtOutModelo)
     activate adm
     
     alt Modelo Válido
-        adm --> tela : modeloValido()
+        adm --> Controller : modeloValido()
         deactivate adm
     
-        tela -> BD : armazenarModelo(mtOutModelo)
+        Controller -> BD : armazenarModelo(mtOutModelo)
         activate BD
-        BD --> tela : confirmaçãoArmazenamento()
+        BD --> Controller : confirmaçãoArmazenamento()
         deactivate BD
     
         tela -> tela : mostrarMensagem("Modelo Confimado!")
     
-        tela -> servico : setModeloImpressao(mtOutModelo)
+        Controller -> servico : setModeloImpressao(mtOutModelo)
         activate servico
-        servico --> tela : modeloImpresso()
+        servico --> Controller : modeloImpresso()
         deactivate servico
     
     else Modelo Inválido
-        adm --> tela : modeloInvalido()
+        adm --> Controller : modeloInvalido()
         deactivate adm
     
         loop Reenvio do Modelo 3D
-            tela -> user : solicitarModelo3D()
-            user --> tela : mtOutModelo
+            Controller -> tela : solicitarModelo3D()
+            tela --> Controller : mtOutModelo
     
-            tela -> adm : analisarModelo(mtOutModelo)
+            Controller -> adm : analisarModelo(mtOutModelo)
             activate adm
     
             alt Modelo Reenviado Válido
-                adm --> tela : modeloValido()
+                adm --> Controller : modeloValido()
                 deactivate adm
     
-                tela -> BD : armazenarModelo(mtOutModelo)
+                Controller -> BD : armazenarModelo(mtOutModelo)
                 activate BD
-                BD --> tela : confirmaçãoArmazenamento()
+                BD --> Controller : confirmaçãoArmazenamento()
                 deactivate BD
     
                 tela -> tela : mostrarMensagem("Modelo Confimado!")
     
-                tela -> servico :setModeloImpressao(mtOutModelo)
+                Controller -> servico :setModeloImpressao(mtOutModelo)
                 activate servico
-                servico --> tela : modeloImpresso()
+                servico --> Controller : modeloImpresso()
                 deactivate servico
     
             else Modelo Reenviado Inválido
@@ -70,5 +70,7 @@
         end
     end
     
+    deactivate tela
+    @enduml
     deactivate tela
     @enduml
