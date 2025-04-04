@@ -1,4 +1,6 @@
-@startuml VenderPlastico
+![image](https://github.com/user-attachments/assets/da0c5ada-c448-4051-87d5-32e5b7a67114)
+
+@startuml Cadastrar
 
 actor usuario as user
 participant TelaCadastro as tela
