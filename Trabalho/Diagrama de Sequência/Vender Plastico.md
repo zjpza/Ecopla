@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/7f9b1616-daf2-43ea-b6f5-571bcb2c2eb1)
+
 @startuml VenderPlastico
 
 actor usuario as user
