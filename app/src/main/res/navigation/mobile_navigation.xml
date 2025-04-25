@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.projetonovoecopla.ui.Home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_encomenda"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.EncomendaFragment"
+        android:label="@string/title_encomenda"
+        tools:layout="@layout/fragment_encomenda" />
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.projetonovoecopla.ui.User.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/navigation_venda"
+        android:name="com.example.projetonovoecopla.ui.Venda.VendaFragment"
+        android:label="@string/title_venda"
+        tools:layout="@layout/fragment_venda" />
+
+    <fragment
+        android:id="@+id/agradecimentoEncomendaFragment"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.AgradecimentoEncomendaFragment"
+        android:label="AgradecimentoEncomendaFragment"
+        tools:layout="@layout/fragment_agradecimento_encomenda">
+    </fragment>
+
+    <action
+        android:id="@+id/action_encomendaFragment_to_agradecimentoEncomendaFragment"
+        app:destination="@id/agradecimentoEncomendaFragment" />
+
+</navigation>

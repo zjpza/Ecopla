@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProjetoNovoEcopla</string>
+    <string name="title_home">Home</string>
+    <string name="title_encomenda">Encomenda</string>
+    <string name="title_venda">Venda</string>
+    <string name="title_user">User</string>
+</resources>
