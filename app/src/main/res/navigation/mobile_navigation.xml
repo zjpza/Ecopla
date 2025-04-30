@@ -8,19 +8,16 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.projetonovoecopla.ui.Home.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_encomenda"
         android:name="com.example.projetonovoecopla.ui.Encomenda.EncomendaFragment"
-        android:label="@string/title_encomenda"
         tools:layout="@layout/fragment_encomenda" />
 
     <fragment
         android:id="@+id/navigation_user"
         android:name="com.example.projetonovoecopla.ui.User.UserFragment"
-        android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
 
     <fragment
@@ -32,12 +29,13 @@
     <fragment
         android:id="@+id/agradecimentoEncomendaFragment"
         android:name="com.example.projetonovoecopla.ui.Encomenda.AgradecimentoEncomendaFragment"
-        android:label="AgradecimentoEncomendaFragment"
         tools:layout="@layout/fragment_agradecimento_encomenda">
     </fragment>
 
-    <action
-        android:id="@+id/action_encomendaFragment_to_agradecimentoEncomendaFragment"
-        app:destination="@id/agradecimentoEncomendaFragment" />
+    <fragment
+        android:id="@+id/agradecimentoVendaFragment"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.AgradecimentoVendaFragmentFragment"
+        tools:layout="@layout/fragment_agradecimento_venda">
+    </fragment>
 
 </navigation>

@@ -4,19 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#508F50"
     tools:context=".ui.User.UserFragment">
 
     <TextView
         android:id="@+id/text_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="#ffff"
+        android:textSize="75sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+        <Button
+            android:id="@+id/btn_pedidos"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:backgroundTint="#ffffff"
+            android:text="@string/Pedido"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btn_vendas"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:backgroundTint="#ffffff"
+            android:text="@string/Venda"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btn_dados"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:backgroundTint="#ffffff"
+            android:text="@string/Dados"
+            android:textColor="#000000"
+            android:textSize="27sp" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

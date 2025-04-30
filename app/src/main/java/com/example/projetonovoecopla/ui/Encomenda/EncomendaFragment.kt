@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projetonovoecopla.R
+import com.example.projetonovoecopla.R.*
+import com.example.projetonovoecopla.R.id.textDialog
 import com.example.projetonovoecopla.databinding.FragmentEncomendaBinding
 
 
@@ -46,8 +49,8 @@ class EncomendaFragment : Fragment() {
         }
 
         binding.btnEnviar.setOnClickListener {
-            val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_enviar, null)
-            val dialogTextView = dialogView.findViewById<TextView>(R.id.text_dialog)
+            val dialogView = LayoutInflater.from(requireContext()).inflate(layout.dialog_enviar, null)
+            val dialogTextView = dialogView.findViewById<TextView>(textDialog)
 
             val dialogViewModel = ViewModelProvider(this).get(DialogViewModel::class.java)
 
@@ -59,8 +62,7 @@ class EncomendaFragment : Fragment() {
                 .setView(dialogView)
                 .create()
 
-
-            val btnNao = dialogView.findViewById<Button>(R.id.btn_nao)
+            val btnNao = dialogView.findViewById<Button>(R.id.btnCancelar)
             btnNao.setOnClickListener {
                 dialog.dismiss()
             }

@@ -1,54 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="200dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@drawable/dialog_background"
-    android:gravity="center"
-    android:padding="50dp">
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="#4B8952"
+android:orientation="vertical"
+android:padding="60dp"
+android:gravity="center_horizontal">
 
+<TextView
+    android:id="@+id/textDialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/continuar_com_pedido"
+    android:textColor="#FFFFFF"
+    android:textSize="16sp"
+    android:layout_marginBottom="32dp" />
 
-    <TextView
-        android:id="@+id/text_dialog"
-        android:layout_width="250dp"
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="50dp">>
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="107dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-         />
+        android:text="@string/cancelar"
+        android:backgroundTint="#A13B2E"
+        android:textColor="#FFF"
+        android:textSize="12sp"/>
 
-    <!-- LinearLayout para os botões Sim e Não -->
-    <LinearLayout
-        android:layout_width="264dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <Space
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_nao"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="Nao"
-            android:text="Não"
-            android:textColor="#FFFFFF"
-            android:background="#FF0000" />
-
-        <Button
-            android:id="@+id/btn_sim"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-
-            android:layout_marginStart="16dp"
-            android:background="#4AAA00"
-            android:contentDescription="Sim"
-            android:text="Sim"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/btn_sim"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sim"
+        android:backgroundTint="#5FB80A"
+        android:textColor="#FFF"
+        android:textSize="12sp"/>
+</LinearLayout>
 </LinearLayout>

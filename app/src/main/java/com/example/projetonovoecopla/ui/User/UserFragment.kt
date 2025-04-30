@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.projetonovoecopla.R
 import com.example.projetonovoecopla.databinding.FragmentUserBinding
 
 class UserFragment : Fragment() {
@@ -16,6 +17,9 @@ class UserFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private var isSearchBarHidden = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,8 +32,16 @@ class UserFragment : Fragment() {
         _binding = FragmentUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        val searchBar = requireActivity().findViewById<View>(R.id.search_bar)
+
+        if (!isSearchBarHidden) {
+            searchBar.visibility = View.GONE
+            isSearchBarHidden = true
+        }
+
+
         val textView: TextView = binding.textUser
-        userViewModel.text.observe(viewLifecycleOwner) {
+            userViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
@@ -37,6 +49,9 @@ class UserFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        val searchBar = requireActivity().findViewById<View>(R.id.search_bar)
+        if (isSearchBarHidden) {
+            searchBar.visibility = View.GONE
+        }
     }
 }

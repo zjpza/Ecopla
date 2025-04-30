@@ -23,13 +23,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.200" />
 
-
     <ImageButton
         android:id="@+id/btn_adicionar"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="98dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="375dp"
         android:background="@android:color/transparent"
         android:contentDescription="Adicionar arquivo"
         android:src="@android:drawable/ic_input_add"
@@ -44,7 +43,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="375dp"
         android:contentDescription="Enviar arquivo"
         android:src="@android:drawable/ic_media_play"
         app:layout_constraintEnd_toEndOf="parent"

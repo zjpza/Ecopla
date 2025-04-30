@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projetonovoecopla.R
+import com.example.projetonovoecopla.R.id.textDialog
 import com.example.projetonovoecopla.databinding.FragmentVendaBinding
 
 class VendaFragment : Fragment() {
@@ -46,7 +47,7 @@ class VendaFragment : Fragment() {
 
         binding.btnEnviar.setOnClickListener {
             val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_enviar, null)
-            val dialogTextView = dialogView.findViewById<TextView>(R.id.text_dialog)
+            val dialogTextView = dialogView.findViewById<TextView>(textDialog)
 
             val dialogViewModel = ViewModelProvider(this).get(DialogViewModelVenda::class.java)
 
@@ -59,14 +60,14 @@ class VendaFragment : Fragment() {
                 .create()
 
 
-            val btnNao = dialogView.findViewById<Button>(R.id.btn_nao)
+            val btnNao = dialogView.findViewById<Button>(R.id.btnCancelar)
             btnNao.setOnClickListener {
                 dialog.dismiss()
             }
 
             val btnSim = dialogView.findViewById<Button>(R.id.btn_sim)
             btnSim.setOnClickListener {
-                findNavController().navigate(R.id.agradecimentoEncomendaFragment)
+                findNavController().navigate(R.id.agradecimentoVendaFragment)
                 dialog.dismiss()
             }
 

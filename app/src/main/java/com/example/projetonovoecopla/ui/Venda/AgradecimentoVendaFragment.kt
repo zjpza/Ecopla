@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projetonovoecopla.R
-import com.example.projetonovoecopla.databinding.FragmentAgradecimentoEncomendaBinding
+import com.example.projetonovoecopla.databinding.FragmentAgradecimentoVendaBinding
 
-class AgradecimentoEncomendaFragment : Fragment() {
+class AgradecimentoVendaFragmentFragment : Fragment() {
 
-    private var _binding: FragmentAgradecimentoEncomendaBinding? = null
+    private var _binding: FragmentAgradecimentoVendaBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,10 +22,10 @@ class AgradecimentoEncomendaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAgradecimentoEncomendaBinding.inflate(inflater, container, false)
+        _binding = FragmentAgradecimentoVendaBinding.inflate(inflater, container, false)
 
-        binding.botaoVoltarEncomenda.setOnClickListener {
-            findNavController().navigate(R.id.navigation_encomenda)
+        binding.botaoVoltarVenda.setOnClickListener {
+            findNavController().navigate(R.id.navigation_venda)
         }
 
         return binding.root

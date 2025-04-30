@@ -19,17 +19,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+
+        // provavelmente pode apagar agr
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_encomenda, R.id.navigation_venda, R.id.navigation_user
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setupWithNavController(navController)
+
+        navView.setOnItemSelectedListener  { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    navController.navigate(R.id.navigation_home)
+                    return@setOnItemSelectedListener  true
+                }
+                R.id.navigation_encomenda -> {
+                    navController.navigate(R.id.navigation_encomenda)
+                    return@setOnItemSelectedListener  true
+                }
+                R.id.navigation_user -> {
+                    navController.navigate(R.id.navigation_user)
+                    return@setOnItemSelectedListener  true
+                }
+                R.id.navigation_venda -> {
+                    navController.navigate(R.id.navigation_venda)
+                    return@setOnItemSelectedListener  true
+                }
+                else -> false
+            }
     }
+}
 }
