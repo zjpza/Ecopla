@@ -40,10 +40,10 @@ class UserFragment : Fragment() {
         }
 
 
-        val textView: TextView = binding.textUser
-            userViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+            val textView: TextView = binding.textUser
+                userViewModel.text.observe(viewLifecycleOwner) {
+                textView.text = it
+            }
         return root
     }
 
@@ -52,6 +52,16 @@ class UserFragment : Fragment() {
         val searchBar = requireActivity().findViewById<View>(R.id.search_bar)
         if (isSearchBarHidden) {
             searchBar.visibility = View.GONE
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        if (isSearchBarHidden) {
+            val searchBar = requireActivity().findViewById<View>(R.id.search_bar)
+            searchBar.visibility = View.VISIBLE
+            isSearchBarHidden = false
         }
     }
 }
