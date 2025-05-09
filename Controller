@@ -28,3 +28,18 @@ public class ControllerProduto {
 
     @PutMapping("/{id}")
     public Produto atualizarProduto(@PathVariable Long id, @RequestBody Produto detalhesProduto) {
+
+    Produto produto = repositorioProduto.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        produto.setNome(detalhesProduto.getNome());
+        produto.setPreco(detalhesProduto.getpreco());
+
+        return repositorioProduto.save(produto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletarProduto(@PathVariable Long id) {
+        repositorioProduto.deleteById(id);
+    }
+}
