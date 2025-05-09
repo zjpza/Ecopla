@@ -1,0 +1,30 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/produtos")
+public class ControllerProduto {
+
+    @Autowired
+    private CatalogoProduto catalogoProduto;
+
+    @PostMapping
+    public Produto criarProduto(@RequestBody Produto produto) {
+        return catalogoProduto.save(produto);
+    }
+
+    @GetMapping
+    public List<Produto> listarTodosProdutos() {
+        return catalogoProduto.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Produto buscarProdutoPorId(@PathVariable Long id) {
+        return repositorioProduto.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+    }
+
+    @PutMapping("/{id}")
+    public Produto atualizarProduto(@PathVariable Long id, @RequestBody Produto detalhesProduto) {
