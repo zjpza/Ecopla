@@ -16,4 +16,5 @@
     <string name="Pedido">Pedidos</string>
     <string name="Venda">Vendas</string>
     <string name="Dados">Dados</string>
+    <string name="finalizar">finalizar\n</string>
 </resources>

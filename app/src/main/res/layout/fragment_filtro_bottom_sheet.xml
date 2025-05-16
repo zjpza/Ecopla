@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutFiltro"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#4D7B3E"
+    android:orientation="vertical"
+
+    android:padding="16dp">
+
+    <!-- Barra superior com botão voltar -->
+<ImageButton
+android:id="@+id/btnVoltar"
+android:layout_width="36dp"
+android:layout_height="36dp"
+android:background="@android:color/transparent"
+android:src="@drawable/seta_que_volta_figma"
+    android:contentDescription="Voltar" />
+
+    <!-- Espaço pequeno -->
+<Space android:layout_height="8dp" android:layout_width="match_parent"/>
+
+    <!-- Título Cores -->
+<TextView
+android:id="@+id/tvTituloCores"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Cores:"
+android:textColor="@android:color/white"
+android:textSize="18sp"
+android:textStyle="bold" />
+
+    <!-- Linha cores (círculos) -->
+<LinearLayout
+android:id="@+id/layoutCores"
+android:layout_width="match_parent"
+android:layout_height="48dp"
+android:orientation="horizontal"
+android:gravity="center_vertical"
+android:layout_marginTop="8dp">
+
+<View
+    android:id="@+id/corVermelho"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corAmarelo"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corAzul"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corVerde"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corRoxo"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corLaranja"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corPreto"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+<View
+    android:id="@+id/corBranco"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/circle" />
+
+</LinearLayout>
+
+    <!-- Espaço -->
+<Space android:layout_height="16dp" android:layout_width="match_parent" />
+
+    <!-- Título Materiais -->
+<TextView
+android:id="@+id/tvTituloMateriais"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Materiais:"
+android:textColor="@android:color/white"
+android:textSize="18sp"
+android:textStyle="bold" />
+
+    <!-- Linha Materiais (botões quadrados) -->
+<LinearLayout
+android:id="@+id/layoutMateriais"
+android:layout_width="match_parent"
+android:layout_height="48dp"
+android:orientation="horizontal"
+android:gravity="center_vertical"
+android:layout_marginTop="8dp">
+
+<TextView
+    android:id="@+id/materialPs"
+    android:layout_width="48dp"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:text="PS"
+    android:textColor="@android:color/black"
+    android:background="@drawable/btn_material_normal"
+    android:textSize="16sp"
+    android:layout_marginEnd="16dp" />
+
+<TextView
+    android:id="@+id/materialAbs"
+    android:layout_width="48dp"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:text="ABS"
+    android:textColor="@android:color/black"
+    android:background="@drawable/btn_material_normal"
+    android:textSize="16sp"
+    android:layout_marginEnd="16dp" />
+
+<TextView
+    android:id="@+id/materialPe"
+    android:layout_width="48dp"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:text="PE"
+    android:textColor="@android:color/black"
+    android:background="@drawable/btn_material_normal"
+    android:textSize="16sp" />
+
+</LinearLayout>
+
+    <!-- Espaço -->
+<Space android:layout_height="24dp" android:layout_width="match_parent" />
+
+    <!-- Título Preço -->
+<TextView
+android:id="@+id/tvTituloPreco"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Preço:"
+android:textColor="@android:color/white"
+android:textSize="18sp"
+android:textStyle="bold" />
+
+    <!-- Linha com valor dinâmico -->
+<TextView
+android:id="@+id/tvPrecoValor"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Até R$ 100"
+android:textColor="@android:color/white"
+android:layout_marginTop="4dp" />
+
+    <!-- Slider (SeekBar melhor usado do Material Components - Slider) -->
+<com.google.android.material.slider.Slider
+android:id="@+id/sliderPreco"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:valueFrom="0"
+android:valueTo="100"
+android:stepSize="1"
+android:layout_marginTop="8dp"
+app:trackHeight="4dp"
+app:thumbColor="@android:color/white"
+app:trackColorActive="@android:color/white"
+app:trackColorInactive="#AAFFFFFF" />
+
+    <!-- Botão aplicar -->
+<Button
+android:id="@+id/btnAplicar"
+android:layout_width="match_parent"
+android:layout_height="48dp"
+android:text="Aplicar"
+android:textAllCaps="false"
+android:backgroundTint="#386B22"
+android:textColor="@android:color/white"
+android:layout_marginTop="16dp"
+android:layout_marginBottom="8dp" />
+
+    </LinearLayout>

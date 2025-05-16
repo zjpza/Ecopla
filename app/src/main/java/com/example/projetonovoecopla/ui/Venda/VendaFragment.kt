@@ -1,36 +1,55 @@
 package com.example.projetonovoecopla.ui.Venda
 
+import android.net.Uri
 import android.os.Bundle
+import android.provider.OpenableColumns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projetonovoecopla.R
-import com.example.projetonovoecopla.R.id.textDialog
 import com.example.projetonovoecopla.databinding.FragmentVendaBinding
 
 class VendaFragment : Fragment() {
 
     private var _binding: FragmentVendaBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
+    private val getDocument = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        uri?.let {
+            val documentName = getFileName(uri)
+
+            Toast.makeText(requireContext(), "Documento selecionado: $documentName", Toast.LENGTH_SHORT).show()
+            binding.textVenda.text = documentName
+        }
+    }
+
+    private fun getFileName(uri: Uri): String {
+        var fileName = ""
+        val cursor = requireContext().contentResolver.query(uri, null, null, null, null)
+        cursor?.use {
+            val nameIndex = it.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+            if (it.moveToFirst()) {
+                fileName = it.getString(nameIndex)
+            }
+        }
+        return fileName
+    }
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val vendaViewModel =
             ViewModelProvider(this).get(VendaViewModel::class.java)
 
-        val DialogViewModelVenda =
+        val dialogViewModelVenda =
             ViewModelProvider(this).get(DialogViewModelVenda::class.java)
 
         _binding = FragmentVendaBinding.inflate(inflater, container, false)
@@ -42,23 +61,20 @@ class VendaFragment : Fragment() {
         }
 
         binding.btnAdicionar.setOnClickListener {
-            Toast.makeText(requireContext(), "Arquivo adicionado", Toast.LENGTH_SHORT).show()
+            showFilePicker()
         }
 
         binding.btnEnviar.setOnClickListener {
             val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_enviar, null)
-            val dialogTextView = dialogView.findViewById<TextView>(textDialog)
+            val dialogTextView = dialogView.findViewById<TextView>(R.id.textDialog)
 
-            val dialogViewModel = ViewModelProvider(this).get(DialogViewModelVenda::class.java)
-
-            dialogViewModel.text.observe(viewLifecycleOwner) { texto ->
+            dialogViewModelVenda.text.observe(viewLifecycleOwner) { texto ->
                 dialogTextView.text = texto
             }
 
             val dialog = android.app.AlertDialog.Builder(requireContext())
                 .setView(dialogView)
                 .create()
-
 
             val btnNao = dialogView.findViewById<Button>(R.id.btnCancelar)
             btnNao.setOnClickListener {
@@ -76,6 +92,10 @@ class VendaFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun showFilePicker() {
+        getDocument.launch("application/*")
     }
 
     override fun onDestroyView() {

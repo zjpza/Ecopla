@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.projetonovoecopla.R
 import com.example.projetonovoecopla.databinding.FragmentUserBinding
 
@@ -39,10 +40,21 @@ class UserFragment : Fragment() {
             isSearchBarHidden = true
         }
 
+        binding.btnDados.setOnClickListener {
+            findNavController().navigate(R.id.dadosFragment)
+        }
+
+        binding.btnPedidos.setOnClickListener {
+            findNavController().navigate(R.id.pedidosFragment)
+        }
+
+        binding.btnVendas.setOnClickListener {
+            findNavController().navigate(R.id.vendasFragment)
+        }
 
             val textView: TextView = binding.textUser
-                userViewModel.text.observe(viewLifecycleOwner) {
-                textView.text = it
+            userViewModel.text.observe(viewLifecycleOwner) {
+                    textView.text = it
             }
         return root
     }
