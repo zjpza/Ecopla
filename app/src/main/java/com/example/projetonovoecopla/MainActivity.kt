@@ -5,6 +5,7 @@ import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.projetonovoecopla.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,46 +20,32 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        // Navegação personalizada
-        navView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    navController.navigate(R.id.navigation_home)
-                    true
-                }
-                R.id.navigation_encomenda -> {
-                    navController.navigate(R.id.navigation_encomenda)
-                    true
-                }
-                R.id.navigation_user -> {
-                    navController.navigate(R.id.navigation_user)
-                    true
-                }
-                R.id.navigation_venda -> {
-                    navController.navigate(R.id.navigation_venda)
-                    true
-                }
-                else -> false
-            }
-        }
+        // Recomendo configurar startDestination no nav_graph.xml, aí não precisa dessa navegação manual:
+        // if (savedInstanceState == null) {
+        //     navController.navigate(R.id.telaLoginFragment)
+        // }
 
-        // Listener para esconder ou mostrar a BottomNavigationView
+        val navView: BottomNavigationView = binding.navView
+
+        // Usar NavigationUI para sincronizar o BottomNavigationView com NavController
+        NavigationUI.setupWithNavController(binding.navView, navController)
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.filtroBottomSheetFragment,
-                R.id.navigation_home,
-                R.id.navigation_encomenda,
-                R.id.navigation_user,
-                R.id.navigation_venda -> {
-                    navView.visibility = View.VISIBLE
-                }
-                else -> {
+                R.id.telaLoginFragment -> { // Pode esconder navView no login se quiser
                     navView.visibility = View.GONE
+                }
+
+                else -> {
+                    navView.visibility = View.VISIBLE
                 }
             }
         }
     }
 }
+
+
+

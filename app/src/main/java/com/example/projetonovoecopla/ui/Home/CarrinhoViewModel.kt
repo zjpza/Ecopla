@@ -1,23 +1,41 @@
 package com.example.projetonovoecopla.ui.Carrinho
 
-import androidx.lifecycle.LiveData
+import android.annotation.SuppressLint
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.example.projetonovoecopla.data.models.Cart
+import com.example.projetonovoecopla.data.network.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class CarrinhoViewModel : ViewModel() {
+class CarrinhoViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val _subtotal = MutableLiveData<String>().apply {
-        value = "Subtotal: R$408,50"
+    val subtotal = MutableLiveData<String>("R$ 0,00")
+    val frete = MutableLiveData<String>("R$ 0,00")
+    val total = MutableLiveData<String>("R$ 0,00")
+
+    @SuppressLint("StaticFieldLeak")
+    private val context = getApplication<Application>().applicationContext
+
+    fun fetchCart() {
+        val api = RetrofitClient.createAuthService(context)
+        api.getCart().enqueue(object : Callback<Cart> {
+            override fun onResponse(call: Call<Cart>, response: Response<Cart>) {
+                if (response.isSuccessful) {
+                    response.body()?.let { cart ->
+                        subtotal.value = "R$ %.2f".format(cart.subtotal)
+                        frete.value = "R$ %.2f".format(cart.frete)
+                        total.value = "R$ %.2f".format(cart.total)
+
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Cart>, t: Throwable) {
+
+            }
+        })
     }
-    val subtotal: LiveData<String> = _subtotal
-
-    private val _frete = MutableLiveData<String>().apply {
-        value = "Frete: R$15,00"
-    }
-    val frete: LiveData<String> = _frete
-
-    private val _total = MutableLiveData<String>().apply {
-        value = "Total: R$423,50"
-    }
-    val total: LiveData<String> = _total
 }

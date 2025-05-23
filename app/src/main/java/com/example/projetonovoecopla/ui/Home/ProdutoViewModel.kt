@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class ProdutoViewModel(application: Application) : AndroidViewModel(application) {
     private val repo = ProdutoRepository(application.applicationContext)
 
     val produtos = MutableLiveData<List<Produto>>()
@@ -32,4 +32,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             }
         })
     }
+
+    // Métodos para buscar, criar, atualizar e deletar podem ser criados da mesma forma
 }

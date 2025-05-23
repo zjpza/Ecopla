@@ -17,4 +17,5 @@
     <string name="Venda">Vendas</string>
     <string name="Dados">Dados</string>
     <string name="finalizar">finalizar\n</string>
+    <string name="imagem_produto">imagem do produto</string>
 </resources>

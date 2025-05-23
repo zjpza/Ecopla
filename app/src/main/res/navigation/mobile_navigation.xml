@@ -73,11 +73,11 @@
 
     <fragment
         android:id="@+id/telaRegistroFragment"
-        android:name="com.example.projetonovoecopla.ui.Login.TelaLoginFragment"
+        android:name="com.example.projetonovoecopla.ui.Login.TelaRegistroFragment"
         tools:layout="@layout/fragment_tela_registro"/>
     <fragment
         android:id="@+id/telaLoginFragment"
-        android:name="com.example.projetonovoecopla.ui.Login.TelaRegistroFragment"
+        android:name="com.example.projetonovoecopla.ui.Login.TelaLoginFragment"
         tools:layout="@layout/fragment_tela_login"/>
 
 
