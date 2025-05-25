@@ -23,7 +23,7 @@ class AgradecimentoPedidoFragment : Fragment() {
         _binding = FragmentAgradecimentoPedidoBinding.inflate(inflater, container, false)
 
         binding.botaoVoltarPedido.setOnClickListener {
-            findNavController().navigate(R.id.navigation_home) // ou outro ID da Home no seu nav_graph
+            findNavController().navigate(R.id.navigation_home)
         }
 
         return binding.root

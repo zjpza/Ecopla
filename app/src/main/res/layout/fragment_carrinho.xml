@@ -40,34 +40,45 @@
     <!-- Rodapé com resumo de valores -->
     <LinearLayout
         android:id="@+id/resumoValores"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="374dp"
+        android:layout_height="242dp"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
         android:background="#66bb6a"
+        android:orientation="vertical"
         android:padding="30dp">
 
         <TextView
             android:id="@+id/tvSubtotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subtotal: R$408,50"
-            android:textColor="@android:color/white" />
+            android:text="Subtotal: R$"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tvFrete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Frete: R$15,00"
-            android:textColor="@android:color/white" />
+            android:text="Frete: R$"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
 
         <TextView
             android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total: R$423,50"
-            android:textStyle="bold"
-            android:textColor="@android:color/white" />
+            android:text="Total: R$"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <!-- Botão de prosseguir -->
         <ImageButton
@@ -76,9 +87,9 @@
             android:layout_height="50dp"
             android:layout_gravity="end"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@android:color/transparent"
             android:rotation="180"
-            android:layout_marginBottom="20dp"
             android:src="@drawable/seta_que_volta_figma" />
     </LinearLayout>
 </RelativeLayout>

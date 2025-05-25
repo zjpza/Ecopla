@@ -39,8 +39,7 @@ class TelaRegistroFragment : Fragment() {
             if (nome.isBlank() || login.isBlank() || senha.isBlank()) {
                 Toast.makeText(requireContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show()
             } else {
-                // Aqui você pode fazer a lógica de registro, chamar ViewModel, API, etc.
-                Toast.makeText(requireContext(), "Registrando usuário: $nome", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(com.example.projetonovoecopla.R.id.navigation_home)
             }
         }
     }

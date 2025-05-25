@@ -14,7 +14,7 @@
         android:layout_height="40dp"
         android:background="@drawable/rounded_background"
         android:hint="@string/pesquisar"
-        android:paddingHorizontal="12dp"
+        android:paddingHorizontal="20dp"
         android:textColor="#000000"
         android:textColorHint="#777777"
         app:layout_constraintTop_toTopOf="parent"

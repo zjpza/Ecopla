@@ -38,7 +38,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:inputType="textPersonName"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textColorHint="#BBD7BD"
         app:layout_constraintTop_toBottomOf="@id/tvNomeLabel"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:inputType="textEmailAddress"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textColorHint="#BBD7BD"
         app:layout_constraintTop_toBottomOf="@id/tvLoginLabel"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:inputType="textPassword"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textColorHint="#BBD7BD"
         app:layout_constraintTop_toBottomOf="@id/tvSenhaLabel"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +115,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
-        />
+        android:layout_marginTop="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
