@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/telaLoginFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.projetonovoecopla.ui.Home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_encomenda"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.EncomendaFragment"
+        tools:layout="@layout/fragment_encomenda" />
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.projetonovoecopla.ui.User.UserFragment"
+        tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/navigation_venda"
+        android:name="com.example.projetonovoecopla.ui.Venda.VendaFragment"
+        android:label="@string/title_venda"
+        tools:layout="@layout/fragment_venda" />
+
+    <fragment
+        android:id="@+id/agradecimentoEncomendaFragment"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.AgradecimentoEncomendaFragment"
+        tools:layout="@layout/fragment_agradecimento_encomenda"/>
+
+    <fragment
+        android:id="@+id/agradecimentoVendaFragment"
+        android:name="com.example.projetonovoecopla.ui.Encomenda.AgradecimentoVendaFragmentFragment"
+        tools:layout="@layout/fragment_agradecimento_venda"/>
+
+    <fragment
+        android:id="@+id/dadosFragment"
+        android:name="com.example.projetonovoecopla.ui.User.DadosUserFragment"
+        tools:layout="@layout/fragment_dados"/>
+
+    <fragment
+        android:id="@+id/vendasFragment"
+        android:name="com.example.projetonovoecopla.ui.User.VendasUserFragment"
+        tools:layout="@layout/fragment_vendas"/>
+
+    <fragment
+        android:id="@+id/pedidosFragment"
+        android:name="com.example.projetonovoecopla.ui.User.PedidosUserFragment"
+        tools:layout="@layout/fragment_pedidos"/>
+
+    <fragment
+        android:id="@+id/carrinhoFragment"
+        android:name="com.example.projetonovoecopla.ui.Home.CarrinhoFragment"
+        tools:layout="@layout/fragment_carrinho"/>
+
+    <fragment
+        android:id="@+id/pagamentoFragment"
+        android:name="com.example.projetonovoecopla.ui.Home.PagamentoFragment"
+        tools:layout="@layout/fragment_pagamento"/>
+
+    <fragment
+        android:id="@+id/agradecimentoPedidoFragment"
+        android:name="com.example.projetonovoecopla.ui.Home.AgradecimentoPedidoFragment"
+        tools:layout="@layout/fragment_agradecimento_pedido"/>
+
+    <fragment
+        android:id="@+id/filtroBottomSheetFragment"
+        android:name="com.example.projetonovoecopla.ui.Home.FiltroBottomSheetFragment"
+        tools:layout="@layout/fragment_filtro_bottom_sheet"/>
+
+    <fragment
+        android:id="@+id/telaRegistroFragment"
+        android:name="com.example.projetonovoecopla.ui.Login.TelaRegistroFragment"
+        tools:layout="@layout/fragment_tela_registro"/>
+    <fragment
+        android:id="@+id/telaLoginFragment"
+        android:name="com.example.projetonovoecopla.ui.Login.TelaLoginFragment"
+        tools:layout="@layout/fragment_tela_login"/>
+
+
+</navigation>

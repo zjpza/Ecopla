@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ProjetoNovoEcopla</string>
+    <string name="title_home">Home</string>
+    <string name="title_encomenda">Encomenda</string>
+    <string name="title_venda">Venda</string>
+    <string name="title_user">User</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="continuar_com_pedido">Deseja continuar com seu pedido?</string>
+    <string name="sim">Sim</string>
+    <string name="voltar">Voltar</string>
+    <string name="obrigado_pelo_pedido">Obrigado pelo Pedido!</string>
+    <string name="voce_pode_acompanhar_pedidos_no_seu_perfil">Você pode acompanhar o processo de seus pedidos pela aba pedidos no seu perfil.</string>
+    <string name="obrigado_pela_venda">Obrigado pela venda!</string>
+    <string name="voce_pode_acompanhar_vendas_no_seu_perfil">Você pode acompanhar o processo das suas vendas pela aba vendas no seu perfil</string>
+    <string name="pesquisar">Pesquisar</string>
+    <string name="Pedido">Pedidos</string>
+    <string name="Venda">Vendas</string>
+    <string name="Dados">Dados</string>
+    <string name="finalizar">finalizar\n</string>
+</resources>

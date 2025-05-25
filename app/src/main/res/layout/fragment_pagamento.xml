@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#508F50"
+    android:gravity="center"
+    android:layout_gravity="center">
+
+    <!-- Spinner: Formas de pagamento -->
+
+    <!-- Texto Total -->
+
+    <Spinner
+        android:id="@+id/spinnerPagamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tvTotalPagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: R$"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Texto confirmação -->
+    <TextView
+        android:id="@+id/tvConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar pagamento?"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Botões -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"
+            android:backgroundTint="#A13B2E"
+            android:textColor="#FFF"
+            android:textSize="12sp"/>
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sim"
+            android:backgroundTint="#5FB80A"
+            android:textColor="#FFF"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+</LinearLayout>

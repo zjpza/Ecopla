@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carrinhoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#508F50"
+    android:padding="16dp">
+
+    <!-- Botão voltar -->
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/seta_que_volta_figma"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Container dos produtos -->
+    <ScrollView
+        android:id="@+id/scrollProdutos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/resumoValores"
+        android:layout_below="@id/btnVoltar"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:id="@+id/layoutProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Produto individual (reutilizar dinamicamente) -->
+            <!-- Este layout será inflado programaticamente com dados -->
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Rodapé com resumo de valores -->
+    <LinearLayout
+        android:id="@+id/resumoValores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="#66bb6a"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tvSubtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal: R$"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvFrete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frete: R$15,00"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: R$"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+        <!-- Botão de prosseguir -->
+        <ImageButton
+            android:id="@+id/btnContinuar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:rotation="180"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/seta_que_volta_figma" />
+    </LinearLayout>
+</RelativeLayout>

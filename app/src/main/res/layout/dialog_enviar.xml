@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="#4B8952"
+android:orientation="vertical"
+android:padding="60dp"
+android:gravity="center_horizontal">
+
+<TextView
+    android:id="@+id/textDialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/continuar_com_pedido"
+    android:textColor="#FFFFFF"
+    android:textSize="16sp"
+    android:layout_marginBottom="32dp" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="50dp">>
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        android:backgroundTint="#A13B2E"
+        android:textColor="#FFF"
+        android:textSize="12sp"/>
+
+    <Space
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_sim"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sim"
+        android:backgroundTint="#5FB80A"
+        android:textColor="#FFF"
+        android:textSize="12sp"/>
+</LinearLayout>
+</LinearLayout>
